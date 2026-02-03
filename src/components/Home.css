@@ -125,9 +125,11 @@
   margin: 2px 0 0 0;
   font-size: 0.85rem;
   color: var(--text);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  /* Allow multi-line text so long content (location, expertise, email)
+     wraps nicely instead of being forced into a single truncated line */
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
 }
 
 .hero-socials {
