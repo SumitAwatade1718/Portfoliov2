@@ -50,7 +50,7 @@ export default function Certificates() {
               onClick={() => setTab(t)}
               className={`cert-tab ${tab === t ? "active" : ""}`}
             >
-              {t === "tech" ? "Technical" : "Other"}
+              {t === "tech" ? "Technical training" : "Other"}
             </button>
           ))}
         </div>
