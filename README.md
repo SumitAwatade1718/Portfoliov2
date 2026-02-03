@@ -3,7 +3,7 @@
 Welcome to my personal portfolio website built with **React.js**, **Motion**, **Figma for Design** and **modern UI design** principles.
 It showcases my work, projects, skills, and journey as a developer passionate about **AI, ML, and Web Technologies**.
 
-🌐 **Live Website:** [https://mellow-babka-0ca6c2.netlify.app/](https://mellow-babka-0ca6c2.netlify.app/)
+🌐 **Live Website:** [https://sumitawatade.netlify.app/](https://sumitawatade.netlify.app/)
 
 🖼️ **Screenshots**
 
