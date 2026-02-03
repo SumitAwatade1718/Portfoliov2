@@ -1,0 +1,66 @@
+import { useState, useEffect } from "react";
+import IntroVideo from "./components/IntroVideo";
+import { Navbar } from "./components/Navbar";
+import { FloatingNav } from "./components/FloatingNav";
+import { Home } from "./components/Home";
+import { About } from "./components/About";
+import Projects from "./components/Projects";
+import { Skills } from "./components/Skills";
+import Certificates from "./components/Certificates"; 
+import { Resume } from "./components/Resume";
+import { Contact } from "./components/Contact";
+import Training from "./components/Training";
+import { ThemeToggle } from "./components/ThemeToggle";
+
+export default function App() {
+  const [theme, setTheme] = useState<"light" | "dark">("dark");
+  const [introDone, setIntroDone] = useState(false);
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme") as "light" | "dark" | null;
+    if (savedTheme) setTheme(savedTheme);
+  }, []);
+
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", theme === "dark");
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  return (
+    <div className="bg-white dark:bg-black min-h-screen relative overflow-x-hidden transition-colors duration-300">
+
+      {/* Navbar always visible */}
+      <Navbar />
+      <FloatingNav />
+      <ThemeToggle theme={theme} setTheme={setTheme} />
+
+      <main>
+        {/* Show intro video first */}
+        {!introDone && <IntroVideo onFinish={() => setIntroDone(true)} />}
+
+        {/* AFTER INTRO */}
+        {introDone && (
+          <>
+              <>
+                {/* OTHERWISE SHOW MAIN WEBSITE */}
+                <Home theme={theme} />
+
+                <About />
+                <Projects theme={theme} />
+
+                {/* PASS FUNCTION TO GALLERY BUTTON */}
+
+
+                <Skills theme={theme} />
+                <Resume theme={theme} />
+                <Certificates theme={theme} />
+                <Training />
+                <Contact theme={theme} />
+              </>
+          </>
+        )}
+      </main>
+
+    </div>
+  );
+}
