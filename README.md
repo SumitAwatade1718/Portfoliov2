@@ -3,7 +3,7 @@
 Welcome to my personal portfolio website built with **React.js**, **Motion**, **Figma for Design** and **modern UI design** principles.
 It showcases my work, projects, skills, and journey as a developer passionate about **AI, ML, and Web Technologies**.
 
-🌐 **Website:** [Sumit Portfolio](https://sumit-awatade.netlify.app/) *(update with your live URL)*
+🌐 **Live Website:** [https://mellow-babka-0ca6c2.netlify.app/](https://mellow-babka-0ca6c2.netlify.app/)
 
 🖼️ **Screenshots**
 
@@ -41,10 +41,10 @@ To run this project locally:
 
 ```bash
 # 1️⃣ Clone the repository
-git clone https://github.com/SumitAwatade1718/Portfolio.git
+git clone https://github.com/SumitAwatade1718/Portfoliov2.git
 
 # 2️⃣ Navigate to project directory
-cd Portfolio
+cd Portfoliov2
 
 # 3️⃣ Install dependencies
 npm install
