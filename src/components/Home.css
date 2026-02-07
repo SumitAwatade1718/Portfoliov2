@@ -10,15 +10,17 @@
   transition: all 0.3s ease;
 }
 
-/* BACKGROUND IMAGE */
+/* BACKGROUND IMAGE - responsive so hero.jpg / j.jpg scale on all screens */
 .hero-bg {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  background-image: var(--hero-bg); /* set image via CSS variable */
+  min-width: 100%;
+  min-height: 100%;
+  background-image: var(--hero-bg);
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
   z-index: 0;
   filter: brightness(1);
@@ -190,6 +192,11 @@
     text-align: center;
   }
 
+  .hero-bg {
+    background-size: cover;
+    background-position: center center;
+  }
+
   .hero-content {
     margin-top: 100px;
     align-items: center;
@@ -234,8 +241,13 @@
 @media (max-width: 600px) {
 
   .hero {
-    min-height: auto;
+    min-height: 100vh;
     padding: 4rem 1.2rem;
+  }
+
+  .hero-bg {
+    background-size: cover;
+    background-position: center 40%;
   }
 
   .hero-content {
@@ -290,6 +302,11 @@
 
 /* EXTRA SMALL DEVICES (Under 430px) */
 @media (max-width: 430px) {
+  .hero-bg {
+    background-size: cover;
+    background-position: center 35%;
+  }
+
   .hero-name {
     font-size: 1.9rem;
   }
@@ -312,6 +329,19 @@
   }
 }
 
+/* Only when BOTH width < 360px AND height < 735px: no image, solid black/white by theme.
+   So image shows when (width >= 360px OR height >= 735px). */
+@media (max-width: 359px) and (max-height: 734px) {
+  .hero-bg {
+    background-image: none !important;
+  }
+  [data-theme="dark"] .hero-bg {
+    background-color: #000000;
+  }
+  [data-theme="light"] .hero-bg {
+    background-color: #ffffff;
+  }
+}
 
 /* THEME VARIABLES (global, on :root) */
 [data-theme="dark"] {

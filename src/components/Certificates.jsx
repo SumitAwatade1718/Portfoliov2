@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./Certificates.css";
+import { TRAINING_CERTS } from "./trainingData";
 
 const CERTS = {
   tech: [
@@ -8,6 +9,7 @@ const CERTS = {
     { title: "Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate", org: "Oracle", date: "2025", img: "/certs/Oracle Cloud Infrastructure 2025 Certified AI Foundations Associate.png", description: "Achieved Oracle Cloud Infrastructure (OCI) AI Foundations Associate certification, demonstrating foundational knowledge in AI services on OCI. This includes understanding machine learning concepts, AI services, and their application within the Oracle Cloud environment." },
     { title: "Oracle Cloud Infrastructure 2025 Certified Foundations Associate", org: "Oracle", date: "2025", img: "/certs/Oracle Cloud Infrastructure 2025 Certified Foundations Associate.png", description: "Obtained Oracle Cloud Infrastructure (OCI) Foundations Associate certification, proving a solid understanding of core OCI services. This covers networking, compute, storage, and identity and access management, essential for cloud deployments." },
   ],
+  training: TRAINING_CERTS,
   other: [
     { title: "Project Presentation", org: "(Runner-up)", date: "2024", img: "/certs/project presentation.jpg", description: "Awarded runner-up in a competitive project presentation, showcasing strong presentation skills and the ability to articulate complex project ideas effectively. This achievement highlights teamwork and innovative problem-solving." },
     { title: "NSS Camp 2023-2024", org: "NSS", date: "2024", img: "/certs/nss_camp_2023-2024.jpg", description: "Participated actively in the NSS Camp 2023-2024, engaging in community service and social development activities. This experience fostered leadership, teamwork, and a sense of social responsibility." },
@@ -44,13 +46,13 @@ export default function Certificates() {
 
         {/* TABS */}
         <div className="cert-tabs">
-          {["tech", "other"].map((t) => (
+          {["tech", "training", "other"].map((t) => (
             <button
               key={t}
               onClick={() => setTab(t)}
               className={`cert-tab ${tab === t ? "active" : ""}`}
             >
-              {t === "tech" ? "Technical training" : "Other"}
+              {t === "tech" ? "Technical" : t === "training" ? "Training" : "Other"}
             </button>
           ))}
         </div>

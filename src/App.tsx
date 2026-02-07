@@ -54,7 +54,6 @@ export default function App() {
                 <Skills theme={theme} />
                 <Resume theme={theme} />
                 <Certificates theme={theme} />
-                <Training />
                 <Contact theme={theme} />
               </>
           </>
