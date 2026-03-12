@@ -27,9 +27,9 @@ const ROWS: SkillRow[][] = [
     {
       title: "Programming Languages",
       items: [
-        { name: "Python" },
-        { name: "C" },
-        { name: "Java" },
+        { name: " Python " },
+        { name: " C " },
+        { name: " Java " },
       ],
     },
     {
